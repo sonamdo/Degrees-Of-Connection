@@ -2,14 +2,16 @@ require 'csv'
 
 class UsersController < ApplicationController
   def index
+    user = User.all.order(created_at: :desc)
+    render json: user
   end
 
   def create
-    puts "HIHIHIHI"
     readThis = CSV.read(params[:file])
     readThis.each do |x|
-      puts "id is #{x[0]}"
-      puts "name is #{x[1]}"
+      user = User.new(name: x[1], id: x[0])
+      user.valid?
+      user.save
     end
   end
 

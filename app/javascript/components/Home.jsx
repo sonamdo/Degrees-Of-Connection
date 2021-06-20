@@ -1,23 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Upload from "./Upload";
+import UserList from "./UserList";
 
 export default () => (
   <div className="vw-100 vh-100 primary-color d-flex align-items-center justify-content-center">
     <div className="jumbotron jumbotron-fluid bg-transparent">
       <div className="container secondary-color">
-        <h1 className="display-4">Home Page</h1>
-        <p className="lead">
-          Practice app for react with ruby
-        </p>
+        <h1 className="display-4">Degrees of Seperation</h1>
         <hr className="my-4" />
-        <Link
-          to="/recipes"
-          className="btn btn-lg custom-button"
-          role="button"
-        >
-          View DB Entries
-        </Link>
         <h4>Next steps</h4>
         <ul>
             <li>DB: Controller and Model</li>
@@ -31,6 +21,7 @@ export default () => (
             <li>Connect to api and retrieve data</li>
         </ul>
         <Upload />
+        <UserList />
       </div>
     </div>
   </div>

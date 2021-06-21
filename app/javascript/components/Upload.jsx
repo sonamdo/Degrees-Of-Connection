@@ -20,18 +20,20 @@ export default () => {
     }
 
     return(
-        <form>
-            {/* <input name="authenticity_token" type="hidden" value="NNb6+J/j46LcrgYUC60wQ2titMuJQ5lLqyAbnbAUkdo=" /> */}
-            <input
-                type = "file"
-                onChange = {(e) => setData(e.target.files[0])}
-            />
-            <button
-                onClick = {handleClick}
-            >
-                Submit
-            </button>
-        </form>
+        <div className = "row">
+            <form>
+                {/* <input name="authenticity_token" type="hidden" value="NNb6+J/j46LcrgYUC60wQ2titMuJQ5lLqyAbnbAUkdo=" /> */}
+                <input
+                    type = "file"
+                    onChange = {(e) => setData(e.target.files[0])}
+                />
+                <button
+                    onClick = {handleClick}
+                >
+                    Submit
+                </button>
+            </form>
+        </div>
         
     )
     

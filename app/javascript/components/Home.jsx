@@ -1,5 +1,6 @@
 import React from "react";
-import Upload from "./Upload";
+import UploadUser from "./UploadUser";
+import UploadConnection from "./UploadConnection";
 import UserList from "./UserList";
 
 export default () => (
@@ -20,7 +21,8 @@ export default () => (
             <li>Update CSS</li>
             <li>Connect to api and retrieve data</li>
         </ul>
-        <Upload />
+        <UploadUser />
+        <UploadConnection />
         <UserList />
       </div>
     </div>

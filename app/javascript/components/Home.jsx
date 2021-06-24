@@ -2,6 +2,7 @@ import React from "react";
 import UploadUser from "./UploadUser";
 import UploadConnection from "./UploadConnection";
 import UserList from "./UserList";
+import ShortestConnection from "./ShortestConnection";
 
 export default () => (
   <div className="vw-100 vh-100 primary-color d-flex align-items-center justify-content-center">
@@ -21,6 +22,7 @@ export default () => (
             <li>Update CSS</li>
             <li>Connect to api and retrieve data</li>
         </ul>
+        <ShortestConnection />
         <UploadUser />
         <UploadConnection />
         <UserList />

@@ -16,4 +16,22 @@ class ConnectionsController < ApplicationController
     render json: user
   end
 
+  def show
+    @user1 = params[:user1]
+    @user2 = params[:user2]
+    puts "first node is #{@user1}, second node is #{@user2}"
+    
+    @edges = []
+
+    Connection.all.each do |x|
+      @edges.push([x.user1, x.user2])
+    end
+
+    # puts "edges are #{@edges}"
+    helpers.degrees_of_separation(@user1, @user2, @edges)
+
+  end
+
 end
+
+

@@ -10,18 +10,7 @@ export default () => (
       <div className="container secondary-color">
         <h1 className="display-4">Degrees of Seperation</h1>
         <hr className="my-4" />
-        <h4>Next steps</h4>
-        <ul>
-            <li>DB: Controller and Model</li>
-                <ul>
-                    <li>rails generate model Name field:type field:type</li>
-                    <li>add validation to model</li>
-                    <li>rails db:migrate</li>
-                    <li>generate controller with index, create, show, destroy actions</li>
-                </ul>
-            <li>Update CSS</li>
-            <li>Connect to api and retrieve data</li>
-        </ul>
+        <h4>Choose two users to see how many steps are required to connect them</h4>
         <ShortestConnection />
         <UploadUser />
         <UploadConnection />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default () => {
 
-    const data = {"user1": 1, "user2":4 }
+    const data = {"user1": 1, "user2":25 }
     const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
 
     function handleClick(){

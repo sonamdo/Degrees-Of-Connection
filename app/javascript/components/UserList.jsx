@@ -5,6 +5,8 @@ export default () => {
     const [users, setUsers] = useState([])
     const [search, setSearch] = useState('')
     const [search2, setSearch2] = useState('')
+    const [user1, setUser1] = useState('')
+    const [user2, setUser2] = useState('')
 
     const searchResults = users.filter(user => user.name.toLowerCase().startsWith(search))
     const searchResults2 = users.filter(user => user.name.toLowerCase().startsWith(search2))
@@ -45,7 +47,15 @@ export default () => {
                             searchResults.map((user) => {
                                 return <tr>
                                         <td>{user.id}</td>
-                                        <td>{user.name}</td>
+                                        <td>
+                                            <button 
+                                                type ="button" 
+                                                className="btn btn-light"
+                                                onClick = {(e) => setUser1(user.name)}
+                                                > 
+                                                    {user.name}
+                                            </ button>
+                                        </td>
                                     </tr>
                                 }) : null
                             } 
@@ -75,7 +85,15 @@ export default () => {
                                 searchResults2.map((user) => {
                                     return <tr>
                                             <td>{user.id}</td>
-                                            <td>{user.name}</td>
+                                            <td>
+                                                <button 
+                                                    type ="button" 
+                                                    className="btn btn-light"
+                                                    onClick = {(e) => setUser2(user.name)}
+                                                    >
+                                                        {user.name}
+                                                </ button>
+                                            </td>
                                         </tr>
                                 }) : null
                             } 

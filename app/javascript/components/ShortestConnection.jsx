@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-export default () => {
+export default ({user1, user2}) => {
 
-    const data = {"user1": 1, "user2":25 }
+    const data = {"user1": user1, "user2": user2 }
     const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
 
     function handleClick(){

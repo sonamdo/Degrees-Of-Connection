@@ -17,8 +17,9 @@ class ConnectionsController < ApplicationController
   end
 
   def show
-    @user1 = params[:user1]
-    @user2 = params[:user2]
+    @user1 = User.find_by(name:params[:user1]).id
+    @user2 = User.find_by(name:params[:user2]).id
+
     puts "first node is #{@user1}, second node is #{@user2}"
     
     @edges = []

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   post 'connections/create', to: 'connections#create'
   get 'connections/index', to: 'connections#index'
-  post 'connections/show', to: 'connections#show'
+  get 'connections/show', to: 'connections#show'
   get 'users/index', to: 'users#index'
   post 'users/create', to: 'users#create'
   get 'users/show', to: 'users#show'

@@ -17,19 +17,22 @@ class ConnectionsController < ApplicationController
   end
 
   def show
-    @user1 = User.find_by(name:params[:user1]).id
-    @user2 = User.find_by(name:params[:user2]).id
+    @user1 = User.find_by(name:params[:user1]).userid
+    @user2 = User.find_by(name:params[:user2]).userid
 
     puts "first node is #{@user1}, second node is #{@user2}"
     
     @edges = []
 
+    # create an array of edges
     Connection.all.each do |x|
       @edges.push([x.user1, x.user2])
     end
 
-    # puts "edges are #{@edges}"
-    helpers.degrees_of_separation(@user1, @user2, @edges)
+    # returns steps required to connect users. If not possible, return 0
+    @answer = helpers.degrees_of_separation(@user1, @user2, @edges)
+    puts "HELPER: #{@answer}"
+    render json: @answer
 
   end
 

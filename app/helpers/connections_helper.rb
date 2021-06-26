@@ -16,8 +16,7 @@ module ConnectionsHelper
           @unchecked = edges
         end
     
-        # iterate through all edges
-      
+        # iterate through all edges for first node in queue
         @unchecked.each do |current|
       
           @currentNode = @queue[0][0]
@@ -25,10 +24,9 @@ module ConnectionsHelper
       
           if @currentNode == endNode
             puts "Last node is #{@currentNode} which is #{@step} steps aways"
-            return
+            return @step
           end
       
-          # puts current
           if current[0] == @currentNode
             @queue.push([current[1], @step+= 1])
           elsif current[1] == @currentNode
@@ -39,15 +37,13 @@ module ConnectionsHelper
           
         end
       
-        # puts "Hi #{@queue}"
-        if @step == 5
-          puts "Cycle Ended"
-          puts @currentNode
-          return @currentNode
+        # ends iteration if beyond a certain level
+        if @step == 6
+          return false
         end
-        # puts @queue
+
+        #remove first node from queue, then repeat function
         @queue.shift
-      
         degrees_of_separation(node, endNode, edges)
       
       end      

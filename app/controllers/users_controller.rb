@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     readThis = CSV.read(params[:file])
     readThis.each do |x|
-      user = User.new(name: x[1], id: x[0])
+      user = User.new(name: x[1], userid: x[0])
       user.valid?
       user.save
     end

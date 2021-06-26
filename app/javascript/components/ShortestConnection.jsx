@@ -2,20 +2,20 @@ import React, { useState } from "react";
 
 export default ({user1, user2}) => {
 
-    const data = {"user1": user1, "user2": user2 }
-    const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+    const [degrees, setDegrees] = useState("")
+    const [connection, setConnection] = useState(false)
 
     function handleClick(){
         console.log("JSON Button")
-
-        fetch(`/connections/show`, {
-            headers: {
-                'X-CSRF-Token': csrf,
-                'Content-Type': 'application/json'
-              },
-            method: "POST",
-            body: JSON.stringify(data)
+        fetch(`/connections/show?user1=${user1}&user2=${user2}`)
+          .then(response => {
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error("Network response was not ok.");
           })
+          .then(response => setDegrees(response))
+          .then(setConnection(true))
     }
 
     return(
@@ -25,6 +25,11 @@ export default ({user1, user2}) => {
             >
                 JSON
             </button>
+            {
+                connection ?
+                <p>{degrees ? <p>User are connected through {degrees} steps</p>: <p>Users are not connected</p>}</p>
+                : ""
+            }
         </div>
     )
 

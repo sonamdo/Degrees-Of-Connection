@@ -5,8 +5,6 @@ export default ({setUser1, setUser2}) => {
     const [users, setUsers] = useState([])
     const [search, setSearch] = useState('')
     const [search2, setSearch2] = useState('')
-    // const [user1, setUser1] = useState('')
-    // const [user2, setUser2] = useState('')
 
     const searchResults = users.filter(user => user.name.toLowerCase().startsWith(search))
     const searchResults2 = users.filter(user => user.name.toLowerCase().startsWith(search2))

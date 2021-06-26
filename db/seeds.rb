@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 9.times do |i|
     User.create(
-      name: "SeedName"
+      name: "SeedName",
+      userid: 1
     )
   end

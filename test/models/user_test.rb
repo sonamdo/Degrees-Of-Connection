@@ -3,7 +3,7 @@ require "test_helper"
 class UserTest < ActiveSupport::TestCase
 
   def setup
-    @user = User.new(name: "John")
+    @user = User.new(name: "John", userid: 1)
   end
 
   test "should be valid" do

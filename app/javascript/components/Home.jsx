@@ -16,17 +16,22 @@ export default () => {
         <div className="container secondary-color">
           <h1 className="display-4">Degrees of Seperation</h1>
           <hr className="my-4" />
-          <h4>Choose two users to see how many steps are required to connect them</h4>
+          <h4 className = "seperation">Choose two users to see how many steps are required to connect them</h4>
+          <div className="d-grid gap-3 seperation">
+            <UploadUser  className="p-2"/>
+            <UploadConnection className="p-2" />
+          </div>
           <ShortestConnection
+            className = "seperation"
             user1 = {user1}
             user2 = {user2}
           />
-          <UploadUser />
-          <UploadConnection />
-          <UserList  
-            setUser1 = {setUser1} 
-            setUser2 = {setUser2}
-            />
+          <div className = "seperation">
+            <UserList 
+              setUser1 = {setUser1} 
+              setUser2 = {setUser2}
+              />
+          </div>
         </div>
       </div>
     </div>

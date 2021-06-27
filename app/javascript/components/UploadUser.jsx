@@ -28,6 +28,7 @@ export default () => {
                     onChange = {(e) => setData(e.target.files[0])}
                 />
                 <button
+                    className="btn btn-secondary"
                     onClick = {handleClick}
                 >
                     Submit Users

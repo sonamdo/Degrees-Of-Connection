@@ -15,10 +15,13 @@ Clone repo then run the following commands to run locally on port 3000
 
 ## Docker
 
+Pull from Repo
 `docker pull sonamdo/degrees`
 
-`docker-compose up`
 
+Then run either
+`docker-compose up`
+or
 `docker run -p 3000:3000 sonamdo/degrees`
 
 ## Endpoints

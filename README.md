@@ -1,24 +1,28 @@
-# README
+# Degrees of Connection
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Calculate how many steps are required to connect users. Breadth-first search method is used to sift through connections. PostgreSQL used for production environment, Sqlite for development
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Prerequisites: Node, npm, yarn, Ruby 2.7.3, Rails
 
-* System dependencies
+Clone repo then run the following commands to run locally on port 3000
 
-* Configuration
+`gem install bundler`
+`rails db:migrate`
+`yarn install`
+`rails server`
 
-* Database creation
+## Docker
 
-* Database initialization
+`docker pull sonamdo/degrees`
 
-* How to run the test suite
+`docker-compose up`
 
-* Services (job queues, cache servers, search engines, etc.)
+`docker run -p 3000:3000 sonamdo/degrees`
 
-* Deployment instructions
-
-* ...
+## Endpoints
+connections/create: Takes csv file with two columns, user1 and user2. Parses to database using connection model.
+connections/show: Takes query string with two params, user1 and user2. Returns degree of connection between the two. Return false if no possible connection.
+users/index: Returns array of all users
+users/create: Takes csv file with two columns, userid and name. Parses to database using user model
